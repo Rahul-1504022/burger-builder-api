@@ -5,6 +5,7 @@ const authorize = require('../middlewares/authorize');
 
 //new order
 const newOrder = async (req, res) => {
+    req.body.userId = req.user._id;
     const order = new Order(req.body);
     try {
         await order.save();

@@ -1,7 +1,11 @@
 const { Schema, model } = require('mongoose');
 
-const orderSchema = {
-    userId: Schema.Types.ObjectId,
+const orderSchema = new Schema({
+    userId: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: "User",
+    },
     ingredients: [
         {
             type: { type: String },
@@ -13,12 +17,12 @@ const orderSchema = {
         phone: String,
         paymentType: String,
     },
-    price: Number,
+    totalPrice: Number,
     orderTime: {
         type: Date,
         default: Date.now,
     },
-};
+}, { timestamps: true });
 
 const Order = new model("Order", orderSchema);
 module.exports.Order = Order;
