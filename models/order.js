@@ -13,8 +13,14 @@ const orderSchema = new Schema({
         }
     ],
     customer: {
-        deliveryAddress: String,
+        name: String,
+        email: String,
+        city: String,
+        postcode: String,
+        country: String,
+        address: String,
         phone: String,
+        state: String,
         paymentType: String,
     },
     totalPrice: Number,

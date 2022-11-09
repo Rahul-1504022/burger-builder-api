@@ -5,6 +5,6 @@ const authorize = require('../middlewares/authorize');
 const { initPayment } = require('../controllers/paymentController');
 
 router.route('/')
-    .post(authorize, initPayment);
+    .get(authorize, initPayment);
 
 module.exports = router;
