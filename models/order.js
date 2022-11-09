@@ -28,6 +28,8 @@ const orderSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    sessionKey: String,
+    transaction_id: String,
 }, { timestamps: true });
 
 const Order = new model("Order", orderSchema);
