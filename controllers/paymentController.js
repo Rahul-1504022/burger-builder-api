@@ -5,7 +5,7 @@ const { Order } = require('../models/order');
 const { Payment } = require('../models/payment');
 const PaymentSession = sslCommerz.PaymentSession;
 
-model.exports.ipn = async (req, res) => {
+module.exports.ipn = async (req, res) => {
     const payment = new Payment(req.body);
     const tran_id = payment['tran_id'];
     if (payment['status'] === "VALID") {
