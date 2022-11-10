@@ -91,10 +91,8 @@ module.exports.initPayment = async (req, res) => {
         userOrder["sessionKey"] = response['sessionkey'];
         userOrder["transaction_id"] = tran_id;
         await Order.findOneAndUpdate({ userId: userID, "customer.paymentType": "paynow" }, userOrder);
-        // await Order.findOneAndUpdate({ userId: userID, "customer.paymentType": "paynow" }, userOrder);
-        return res.status(200).send(response);
     }
-    return res.status(400).send(response.failedreason);
+    return res.status(200).send(response);
 
 }
 
