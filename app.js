@@ -9,8 +9,10 @@ const paymentRouter = require('./routers/paymentRouter');
 const app = express();
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); //use to handle post request in JSON format
 app.use(compression());
+app.use(express.urlencoded({ extended: true })); //use to handle post URL format
+app.use(express.static('public'));
 
 app.use('/user', userRouter);
 app.use('/order', orderRouter);
