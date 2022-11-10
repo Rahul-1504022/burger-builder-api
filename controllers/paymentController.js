@@ -32,8 +32,8 @@ module.exports.initPayment = async (req, res) => {
     const { name, email, city, postcode, country, address, phone, state } = userOrder.customer;
     const payment = new PaymentSession(
         true,
-        process.env.STORE_ID,
-        process.env.STORE_PASSWORD
+        process.env.SSL_STORE_ID,
+        process.env.SSL_STORE_PASSWORD,
     );
 
     // Set the urls
