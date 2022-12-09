@@ -38,10 +38,10 @@ module.exports.initPayment = async (req, res) => {
 
     // Set the urls
     payment.setUrls({
-        success: "https://salty-woodland-88546.herokuapp.com/payment/success", // If payment Succeed
-        fail: "https://salty-woodland-88546.herokuapp.com/payment/failed", // If payment failed
-        cancel: "https://salty-woodland-88546.herokuapp.com/payment/cancel", // If user cancel payment
-        ipn: "https://salty-woodland-88546.herokuapp.com/payment/ipn", // SSLCommerz will send http post request in this link
+        success: "https://my-burger-api.onrender.com/payment/success", // If payment Succeed
+        fail: "https://my-burger-api.onrender.com/payment/failed", // If payment failed
+        cancel: "https://my-burger-api.onrender.com/payment/cancel", // If user cancel payment
+        ipn: "https://my-burger-api.onrender.com/payment/ipn", // SSLCommerz will send http post request in this link
     });
 
     // Set order details
